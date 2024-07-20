@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
   return (
     // <!-- Register Page ( Only for Guest users ) -->
@@ -29,7 +31,7 @@ export default function Register() {
 
           <p className="field">
             <span>
-              If you already have profile click <a href="#">here</a>
+              If you already have profile click <Link to="/login">here</Link>
             </span>
           </p>
         </div>
