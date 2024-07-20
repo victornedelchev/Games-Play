@@ -18,5 +18,6 @@ SoftUni React Project Workshop
 ## 3. Create Service Layer
  - [x] Service Layer architecture
  - [x] Abstract requester
+ - [ ] Add games API
 ## 4. Page Implementation
  - [ ] Game list
