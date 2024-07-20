@@ -21,6 +21,9 @@ SoftUni React Project Workshop
  - [x] Add games API
  - [x] Pre-seed practice server
 ## 4. Page Implementation
- - [ ] Catalog
- - [ ] Details
+ - [x] Catalog
+ - [x] Details
+  - [x] Details link
+  - [x] Details route
+  - [x] API function - get one
  - [ ] Home

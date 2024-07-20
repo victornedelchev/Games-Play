@@ -2,10 +2,18 @@ import * as requester from "./requester";
 
 const BASE_URL = "http://localhost:3030/jsonstore/games";
 
-export const getAll = async () => {
-    const result = await requester.get(BASE_URL);
-    const games = Object.values(result);
+const getAll = async () => {
+  const result = await requester.get(BASE_URL);
+  const games = Object.values(result);
 
-    return games;
-}
+  return games;
+};
 
+const getOne = (gameId) => requester.get(`${BASE_URL}/${gameId}`);
+
+const gamesAPI = {
+  getAll,
+  getOne,
+};
+
+export default gamesAPI;
