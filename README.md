@@ -5,7 +5,7 @@ SoftUni React Project Workshop
  - [x] Initialize git repo
  - [x] Add SoftUni practice server
  - [x] Add base vite react project as client
- - [x] CleanUp client
+ - [x] Cleanup client
  - [x] Add project resources
  - [x] Convert HTML to JSX
  - [x] Separate HTML into components
@@ -15,3 +15,8 @@ SoftUni React Project Workshop
  - [x] Add routes in App.jsx
  - [x] Add links in the navigation
  - [x] Add links in login and register forms
+## 3. Create Service Layer
+ - [x] Service Layer architecture
+ - [x] Abstract requester
+## 4. Page Implementation
+ - [ ] Game list
