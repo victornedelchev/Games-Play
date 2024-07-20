@@ -26,4 +26,4 @@ SoftUni React Project Workshop
   - [x] Details link
   - [x] Details route
   - [x] API function - get one
- - [ ] Home
+ - [x] Home

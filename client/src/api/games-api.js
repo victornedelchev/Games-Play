@@ -16,4 +16,5 @@ const gamesAPI = {
   getOne,
 };
 
+
 export default gamesAPI;
