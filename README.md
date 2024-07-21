@@ -26,4 +26,10 @@ SoftUni React Project Workshop
   - [x] Details link
   - [x] Details route
   - [x] API function - get one
- - [x] Home
+ - [x] Home - latest games
+## 5. Comments (Advanced)
+- [x] Create service for nested resource `comments`
+- [x] Post comments to server
+- [x] Read comments from server 
+- [x] Add comments in the component
+- [x] Clear form

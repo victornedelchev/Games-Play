@@ -28,3 +28,10 @@ export const del = requester.bind(null, "DELETE");
 // export const post = (url, data) => requester('POST', url, data);
 // export const put = (url, data) => requester('PUT', url, data);
 // export const del = (url, data) => requester('DELETE', url, data);
+
+export default {
+  get,
+  post,
+  put,
+  del,
+};
