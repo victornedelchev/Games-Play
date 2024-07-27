@@ -28,8 +28,24 @@ SoftUni React Project Workshop
   - [x] API function - get one
  - [x] Home - latest games
 ## 5. Comments (Advanced)
-- [x] Create service for nested resource `comments`
-- [x] Post comments to server
-- [x] Read comments from server 
-- [x] Add comments in the component
-- [x] Clear form
+ - [x] Create service for nested resource `comments`
+ - [x] Post comments to server
+ - [x] Read comments from server 
+ - [x] Add comments in the component
+ - [x] Clear form
+## 6. API Hooks
+ - [] Game API hooks
+ - [] Comments hooks
+ - [] Form hook
+## 7. Authentication
+ - [] Auth API
+ - [] Auth API hook
+ - [] Auth state & context
+ - [] Login
+ - [] Register
+ - [] Logout
+## 8. UI Implementation
+ - [] Dynamic navigation (switch between login and logout view)
+ - [] Create game
+  - [] API function
+  - [] Create hook
