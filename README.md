@@ -35,7 +35,7 @@ SoftUni React Project Workshop
  - [x] Clear form
 ## 6. API Hooks
  - [x] Form hook 
- - [ ] Game API hooks
+ - [x] Game API hooks
  - [] Comments hooks
 ## 7. Authentication
  - [] Auth API
