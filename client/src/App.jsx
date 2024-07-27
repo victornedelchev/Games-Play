@@ -12,6 +12,7 @@ import GameCatalog from "./components/gameCatalog/GameCatalog";
 import { AuthContext } from "./contexts/authContext";
 
 function App() {
+  // TODO: remove this from App component
   const [authState, setAuthState] = useState({});
 
   const changeAuthState = (state) => {
@@ -19,6 +20,7 @@ function App() {
   };
 
   const authData = {
+    userId: authState._id,
     email: authState.email,
     accessToken: authState.accessToken,
     isAuthenticated: !!authState.email,
