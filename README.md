@@ -34,9 +34,9 @@ SoftUni React Project Workshop
  - [x] Add comments in the component
  - [x] Clear form
 ## 6. API Hooks
- - [] Game API hooks
+ - [x] Form hook 
+ - [ ] Game API hooks
  - [] Comments hooks
- - [] Form hook
 ## 7. Authentication
  - [] Auth API
  - [] Auth API hook
@@ -49,3 +49,4 @@ SoftUni React Project Workshop
  - [] Create game
   - [] API function
   - [] Create hook
+- [] Latest games
