@@ -39,14 +39,19 @@ SoftUni React Project Workshop
  - [ ] Comments hooks
 ## 7. Authentication
  - [ ] Auth API
-  - [ ] Login
+  - [x] Login
   - [ ] Register
   - [ ] Logout 
  - [ ] Auth API hook
- - [ ] Auth state & context
- - [ ] Login
+  - [ ] Login
+  - [ ] Register
+  - [ ] Logout
+ - [x] Auth state & context
+ - [x] Token management
+ - [x] Login
  - [ ] Register
  - [ ] Logout
+ - [ ] Authorized requests
 ## 8. UI Implementation
  - [ ] Dynamic navigation (switch between login and logout view)
  - [ ] Create game

@@ -6,16 +6,21 @@ import { useFormHook } from "../../hooks/useForm";
 export default function Login() {
   const login = useLogin();
   const navigate = useNavigate();
-  const { values, changeHandler, submitHandler } = useFormHook(
-    { email: "", password: "" },
-    async ({ email, password }) => {
-      try {
-        await login(email, password);
-        navigate("/");
-      } catch (error) {
-        console.error(error.message);
-      }
+
+  const loginHandler = async ({ email, password }) => {
+    try {
+      await login(email, password);
+      navigate("/");
+    } catch (error) {
+      console.error(error.message);
     }
+  };
+
+  const initialValues = { email: "", password: "" };
+
+  const { values, changeHandler, submitHandler } = useFormHook(
+    initialValues,
+    loginHandler
   );
 
   return (
