@@ -36,17 +36,20 @@ SoftUni React Project Workshop
 ## 6. API Hooks
  - [x] Form hook 
  - [x] Game API hooks
- - [] Comments hooks
+ - [ ] Comments hooks
 ## 7. Authentication
- - [] Auth API
- - [] Auth API hook
- - [] Auth state & context
- - [] Login
- - [] Register
- - [] Logout
+ - [ ] Auth API
+  - [ ] Login
+  - [ ] Register
+  - [ ] Logout 
+ - [ ] Auth API hook
+ - [ ] Auth state & context
+ - [ ] Login
+ - [ ] Register
+ - [ ] Logout
 ## 8. UI Implementation
- - [] Dynamic navigation (switch between login and logout view)
- - [] Create game
-  - [] API function
-  - [] Create hook
-- [] Latest games
+ - [ ] Dynamic navigation (switch between login and logout view)
+ - [ ] Create game
+  - [ ] API function
+  - [ ] Create hook
+- [ ] Latest games
