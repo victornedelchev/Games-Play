@@ -40,20 +40,21 @@ SoftUni React Project Workshop
 ## 7. Authentication
  - [ ] Auth API
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout 
  - [ ] Auth API hook
-  - [ ] Login
-  - [ ] Register
+  - [x] Login
+  - [x] Register
   - [ ] Logout
  - [x] Auth state & context
  - [x] Token management
  - [x] Login
- - [ ] Register
+ - [x] Register
+  - [x] Add form validation
  - [ ] Logout
  - [ ] Authorized requests
 ## 8. UI Implementation
- - [ ] Dynamic navigation (switch between login and logout view)
+ - [x] Dynamic navigation (switch between login and logout view)
  - [ ] Create game
   - [ ] API function
   - [ ] Create hook
