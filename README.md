@@ -52,10 +52,14 @@ SoftUni React Project Workshop
  - [x] Register
   - [x] Add form validation
  - [ ] Logout
- - [ ] Authorized requests
+ - [x] Authorized requests
 ## 8. UI Implementation
  - [x] Dynamic navigation (switch between login and logout view)
- - [ ] Create game
-  - [ ] API function
-  - [ ] Create hook
+ - [x] Create game
+  - [x] API function
+  - [x] Create hook
 - [ ] Latest games
+
+## Notes
+Latest games URL -> "http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3"
+USE URL search params
