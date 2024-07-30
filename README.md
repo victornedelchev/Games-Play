@@ -58,8 +58,11 @@ SoftUni React Project Workshop
  - [x] Create game
   - [x] API function
   - [x] Create hook
-- [ ] Latest games
+ - [ ] Latest games
+## 9. Refactoring
+ - [x] Extract auth state from App component
+
 
 ## Notes
-Latest games URL -> "http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3"
-USE URL search params
+1. Latest games URL -> "http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3", USE URL search params
+2. seedData -> on line 1448 of server.js 
