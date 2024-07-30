@@ -9,6 +9,7 @@ import CreateGame from "./components/gameCreate/CreateGame";
 import GameEdit from "./components/gameEdit/GameEdit";
 import GameCatalog from "./components/gameCatalog/GameCatalog";
 import { AuthContextProvider } from "./contexts/authContext";
+import Logout from "./components/logout/Logout";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/create" element={<CreateGame />} />
             <Route path="/edit/:gameId" element={<GameEdit />} />
             <Route path="/details/:gameId" element={<GameDetails />} />
