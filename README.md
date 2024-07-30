@@ -61,6 +61,7 @@ SoftUni React Project Workshop
  - [ ] Latest games
 ## 9. Refactoring
  - [x] Extract auth state from App component
+ - [x] Persist auth state
 
 
 ## Notes
