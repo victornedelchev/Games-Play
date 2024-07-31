@@ -21,10 +21,16 @@ export default function GameDetails({
   const createComment = useCreateComment();
   const [game] = useGetOneGame(gameId);
   const { isAuthenticated } = useAuthContext();
+
   const { values, changeHandler, submitHandler } = useFormHook(
     initialValues,
-    ({ comment }) => {
-      createComment(gameId, comment);
+    async ({ comment }) => {
+      try {
+        const newComment = await createComment(gameId, comment);
+        setComments((oldComments) => [...oldComments, newComment]);
+      } catch (error) {
+        console.error(error.message);
+      }
     }
   );
 
