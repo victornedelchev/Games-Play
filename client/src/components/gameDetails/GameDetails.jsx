@@ -1,8 +1,13 @@
-import { useState } from "react";
-
 import { useParams } from "react-router-dom";
-import commentsApi from "../../api/comments-api";
+
 import { useGetOneGame } from "../../hooks/useGames";
+import { useFormHook } from "../../hooks/useForm";
+import { useAuthContext } from "../../contexts/authContext";
+import { useCreateComment, useGetAllComments } from "../../hooks/useComments";
+
+const initialValues = {
+  comment: "",
+};
 
 export default function GameDetails({
   title,
@@ -11,29 +16,17 @@ export default function GameDetails({
   imageUrl,
   summary,
 }) {
-  const [username, setUsername] = useState("");
-  const [comment, setComment] = useState("");
   const { gameId } = useParams();
-
-  const [game, setGame] = useGetOneGame(gameId);
-
-  const commentSubmitHandler = async (e) => {
-    e.preventDefault();
-
-    const newComment = await commentsApi.create(gameId, username, comment);
-
-    // TODO: this should be refactored
-    setGame((previousState) => ({
-      ...previousState,
-      comments: {
-        ...previousState.comments,
-        [newComment._id]: newComment,
-      },
-    }));
-
-    setUsername("");
-    setComment("");
-  };
+  const [comments, setComments] = useGetAllComments(gameId);
+  const createComment = useCreateComment();
+  const [game] = useGetOneGame(gameId);
+  const { isAuthenticated } = useAuthContext();
+  const { values, changeHandler, submitHandler } = useFormHook(
+    initialValues,
+    ({ comment }) => {
+      createComment(gameId, comment);
+    }
+  );
 
   return (
     //     <!--Details Page-->
@@ -53,12 +46,10 @@ export default function GameDetails({
         <div className="details-comments">
           <h2>Comments:</h2>
           <ul>
-            {Object.keys(game.comments || {}).length > 0 ? (
-              Object.values(game.comments).map((comment) => (
+            {comments.length > 0 ? (
+              comments.map((comment) => (
                 <li key={comment._id} className="comment">
-                  <p>
-                    {comment.username}: {comment.text}.
-                  </p>
+                  <p>Username: {comment.text}.</p>
                 </li>
               ))
             ) : (
@@ -80,25 +71,20 @@ export default function GameDetails({
 
       {/* <!-- Bonus --> */}
       {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
-      <article className="create-comment">
-        <label>Add new comment:</label>
-        <form className="form" onSubmit={commentSubmitHandler}>
-          <input
-            type="text"
-            placeholder="Victor"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <textarea
-            name="comment"
-            placeholder="Comment......"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          ></textarea>
-          <input className="btn submit" type="submit" value="Add Comment" />
-        </form>
-      </article>
+      {isAuthenticated && (
+        <article className="create-comment">
+          <label>Add new comment:</label>
+          <form className="form" onSubmit={submitHandler}>
+            <textarea
+              name="comment"
+              placeholder="Comment......"
+              value={values.comment}
+              onChange={changeHandler}
+            ></textarea>
+            <input className="btn submit" type="submit" value="Add Comment" />
+          </form>
+        </article>
+      )}
     </section>
   );
 }

@@ -38,7 +38,7 @@ SoftUni React Project Workshop
  - [x] Game API hooks
  - [ ] Comments hooks
 ## 7. Authentication
- - [ ] Auth API
+ - [x] Auth API
   - [x] Login
   - [x] Register
   - [x] Logout 
@@ -62,6 +62,7 @@ SoftUni React Project Workshop
 ## 9. Refactoring
  - [x] Extract auth state from App component
  - [x] Persist auth state
+ - [ ] Comments
 
 
 ## Notes
