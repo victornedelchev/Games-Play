@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export function useFormHook(initialValue, submitCallback) {
-  const [values, setValues] = useState(initialValue);
-  
+export function useFormHook(initialValues, submitCallback) {
+  const [values, setValues] = useState(initialValues);
+
   const changeHandler = (e) => {
     setValues((state) => ({
       ...state,
@@ -14,6 +14,8 @@ export function useFormHook(initialValue, submitCallback) {
     e.preventDefault();
 
     submitCallback(values);
+
+    setValues(initialValues);
   };
 
   return {
