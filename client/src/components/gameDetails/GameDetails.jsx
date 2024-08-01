@@ -17,17 +17,21 @@ export default function GameDetails({
   summary,
 }) {
   const { gameId } = useParams();
-  const [comments, setComments] = useGetAllComments(gameId);
+  const [comments, dispatch] = useGetAllComments(gameId);
   const createComment = useCreateComment();
   const [game] = useGetOneGame(gameId);
-  const { isAuthenticated } = useAuthContext();
+  const { email, isAuthenticated } = useAuthContext();
 
   const { values, changeHandler, submitHandler } = useFormHook(
     initialValues,
     async ({ comment }) => {
       try {
         const newComment = await createComment(gameId, comment);
-        setComments((oldComments) => [...oldComments, newComment]);
+        // setComments((oldComments) => [...oldComments, newComment]);
+        dispatch({
+          type: "ADD_COMMENT",
+          payload: { ...newComment, author: { email } },
+        });
       } catch (error) {
         console.error(error.message);
       }
@@ -55,7 +59,9 @@ export default function GameDetails({
             {comments.length > 0 ? (
               comments.map((comment) => (
                 <li key={comment._id} className="comment">
-                  <p>{comment.author['email']}: {comment.text}.</p>
+                  <p>
+                    {comment.author["email"]}: {comment.text}.
+                  </p>
                 </li>
               ))
             ) : (
