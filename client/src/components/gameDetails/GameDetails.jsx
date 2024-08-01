@@ -20,7 +20,7 @@ export default function GameDetails({
   const [comments, dispatch] = useGetAllComments(gameId);
   const createComment = useCreateComment();
   const [game] = useGetOneGame(gameId);
-  const { email, isAuthenticated } = useAuthContext();
+  const { userId, email, isAuthenticated } = useAuthContext();
 
   const { values, changeHandler, submitHandler } = useFormHook(
     initialValues,
@@ -37,6 +37,8 @@ export default function GameDetails({
       }
     }
   );
+
+  const isOwner = userId === game._ownerId;
 
   return (
     //     <!--Details Page-->
@@ -71,14 +73,16 @@ export default function GameDetails({
         </div>
 
         {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-        <div className="buttons">
-          <a href="#" className="button">
-            Edit
-          </a>
-          <a href="#" className="button">
-            Delete
-          </a>
-        </div>
+        {isOwner && (
+          <div className="buttons">
+            <a href="#" className="button">
+              Edit
+            </a>
+            <a href="#" className="button">
+              Delete
+            </a>
+          </div>
+        )}
       </div>
 
       {/* <!-- Bonus --> */}
