@@ -74,7 +74,9 @@ SoftUni React Project Workshop
 - [x] Create game
 - [x] API function
 - [x] Create hook
-- [x] Latest games
+- [x] Delete game
+- [ ] Edit game
+- [ ] Latest games
 
 ## 9. Refactoring
 
