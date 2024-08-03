@@ -1,12 +1,24 @@
 import * as requester from "./requester";
 
 const BASE_URL = "http://localhost:3030/data/games";
+const SORTING_URL = "?sortBy=_createdOn%20desc&pageSize=3";
 
 const getAll = async () => {
   const result = await requester.get(BASE_URL);
   const games = Object.values(result);
 
   return games;
+};
+
+const getLatest = async () => {
+  // const urlSearchParams = new URLSearchParams({
+  //   sortBy: "_createdOn desc",
+  //   pageSize: 3,
+  // });
+
+  const latestGames = await requester.get(`${BASE_URL}${SORTING_URL}`);
+
+  return latestGames;
 };
 
 const getOne = (gameId) => requester.get(`${BASE_URL}/${gameId}`);
@@ -20,6 +32,7 @@ const edit = (gameId, gameData) =>
 
 const gamesAPI = {
   getAll,
+  getLatest,
   getOne,
   create,
   remove,

@@ -8,8 +8,10 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       // TODO: modify to set only latest games
-      const result = await gamesAPI.getAll();
-      setLatestGames(result.reverse().slice(0, 3));
+      // const result = await gamesAPI.getAll();
+      const games = await gamesAPI.getLatest();
+      // setLatestGames(result.reverse().slice(0, 3));
+      setLatestGames(games);
     })();
   }, []);
 

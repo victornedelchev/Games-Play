@@ -16,7 +16,6 @@ export default function GameEdit() {
   const { gameId } = useParams();
   const [game, setGame] = useGetOneGame(gameId);
   const navigate = useNavigate();
-
   const { values, changeHandler, submitHandler } = useFormHook(
     Object.assign(initialValues, game),
     async (values) => {
