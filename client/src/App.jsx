@@ -10,9 +10,10 @@ import GameEdit from "./components/gameEdit/GameEdit";
 import GameCatalog from "./components/gameCatalog/GameCatalog";
 import { AuthContextProvider } from "./contexts/authContext";
 import Logout from "./components/logout/Logout";
+// import AuthGuard from "./components/common/AuthGuard";
+import PrivateGuard from "./components/common/PrivateGuard";
 
 function App() {
-
   return (
     <AuthContextProvider>
       <div id="box">
@@ -23,9 +24,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            {/* <Route path="/create" element={<AuthGuard><CreateGame /></AuthGuard>} /> */}
+            <Route element={<PrivateGuard />}>
+              <Route path="/create" element={<CreateGame />} />
+              <Route path="/edit/:gameId" element={<GameEdit />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/create" element={<CreateGame />} />
-            <Route path="/edit/:gameId" element={<GameEdit />} />
+            </Route>
             <Route path="/details/:gameId" element={<GameDetails />} />
             <Route path="/catalog" element={<GameCatalog />} />
           </Routes>

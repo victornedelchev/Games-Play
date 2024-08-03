@@ -85,6 +85,7 @@ SoftUni React Project Workshop
 - [x] Comments
 - [x] Refactored comments with useReducer
 - [x] Edit and delete ownership rendering
+- [x] Add route guards
 
 ## Notes
 

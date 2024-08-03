@@ -10,11 +10,15 @@ const getAll = async () => {
   return games;
 };
 
+// const createdOn = encodeURIComponent("_createdOn desc")
+
 const getLatest = async () => {
   // const urlSearchParams = new URLSearchParams({
-  //   sortBy: "_createdOn desc",
+  //   sortBy: createdOn,
   //   pageSize: 3,
   // });
+
+  // const latestGames = await requester.get(`${BASE_URL}?${urlSearchParams.toString()}`);
 
   const latestGames = await requester.get(`${BASE_URL}${SORTING_URL}`);
 
